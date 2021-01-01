@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Practical6</title>
+		<link rel="stylesheet" href="styles.css" />
+		<script>
+			function getValue(elem) {
+				return document.getElementById(elem);
+			}
+
+			function doAlert() {
+				alert(
+					`Name: ${getValue('name').value}\n Email: ${
+						getValue('email').value
+					}\n contact: ${
+						getValue('contact').value
+					} \n Feedback: ${getValue('feedback').value}`,
+				);
+			}
+			function handleReset() {
+				getValue('name').value = '';
+				getValue('email').value = '';
+				getValue('contact').value = '';
+				getValue('feedback').value = '';
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Amazon Online Shopping Customer Experience</h1>
+		<form onsubmit="doAlert()">
+			<label for="name">Enter your Name:-</label>
+			<input type="text" name="name" placeholder="Enter Name" id="name" />
+			<br />
+			<br>
+			<label for="email">Enter your Email-ID:-</label>
+			<input
+				type="email"
+				name="email"
+				placeholder="Enter Email"
+				id="email"
+				required
+			/>
+			<br />
+			<br>
+			<label for="contact">Enter your Contact details:-</label>
+			<input
+				type="contact"
+				name="contact"
+				placeholder="Enter your Contact details"
+				id="contact"
+				required
+			/>
+			<br />
+			<br>
+
+			<label for="myfile">Select a file:</label>
+			<input
+				type="file"
+				id="myfile"
+				name="myfile"
+				accept="application/json"
+			/>
+
+			<p>Select Gender</p>
+			<input
+				type="radio"
+				id="male"
+				name="gender"
+				value="male"
+				id="gender"
+				required
+			/>
+			<label for="male">Male</label><br />
+
+			<input
+				type="radio"
+				id="female"
+				name="gender"
+				value="female"
+				id="gender"
+				required
+			/>
+			<label for="female">Female</label><br />
+			<br>
+
+			<label for="feedback">Feedback</label>
+			<textarea
+				name="feedback"
+				cols="30"
+				rows="10"
+				id="feedback"
+				required
+			>
+			</textarea
+			><br />
+			<br>
+			<input type="checkbox" name="remember me" />
+			<label for="remember me">Remember Me</label>
+			<br><br>
+			<input type="submit" value="submit" />
+			<button onclick="handleReset()">Reset</button>
+		</form>
+	</body>
+</html>
